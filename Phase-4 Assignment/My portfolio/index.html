@@ -1,0 +1,48 @@
+<!DOCTYPE html> 
+<html lang="en" ng-app="portfolioApp"> 
+<head> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>Portfolio Website</title> 
+<link rel="stylesheet" 
+href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css
+ " 
+> 
+<link rel="stylesheet" href="style.css"> 
+</head> 
+<body> 
+    <div class="container"> 
+        <h1 class="text-primary">Create Your Portfolio</h1> 
+            <div ng-controller="PortfolioController"> 
+                <form> 
+                <div class="form-group"> 
+                <label for="name">Name</label> 
+                <input type="text" class="form-control custom-input" id="name" 
+                ng model="portfolio.name" required> 
+                </div> 
+                <div class="form-group"> 
+                <label for="email">Email</label> 
+                <input type="email" class="form-control custom-input" id="email" 
+                ng model="portfolio.email" required> 
+                </div> 
+                <div class="form-group"> 
+                <label for="bio">Bio</label> 
+                <textarea class="form-control custom-textarea" id="bio" rows="5" 
+                ng model="portfolio.bio" required></textarea> 
+                </div> 
+                <div class="form-group"> 
+                <label for="skills">Skills</label> 
+                <textarea class="form-control custom-textarea" id="skills" rows="3" 
+                ng-model="portfolio.skills" required></textarea> 
+                </div> 
+                <button class="btn btn-primary custom-button" 
+                ng click="generatePDF()">Generate PDF</button> 
+                </form> 
+            </div> 
+    </div> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.9/angular.min.js">
+</script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
+<script src="app.js"></script>
+</body> 
+</html> 
